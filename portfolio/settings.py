@@ -15,7 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1" , "web-production-af80.up.railway.app", "www.omertairi.org"]
 # web-production-af80.up.railway.app
-CSRF_TRUSTED_ORIGINS = ['https://web-production-af80.up.railway.app/', 'https://www.omertairi.org']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-af80.up.railway.app', 'https://www.omertairi.org']
 
 
 # Application definition
