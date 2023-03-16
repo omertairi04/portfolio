@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Omer Tairi{% endblock title %}
+
+{% block content %}
+
+{% include 'popup.html' %}
+
+{% for profile in profile %}
+
+<section id="introduction">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="profile-image">
+              <img src="{{profile.profilepic}}" alt="Your Name">
+            </div>
+          </div>
+        <div class="col-md-6">
+          <h1>Hello, {{profile.name}} {{profile.surname}}</h1>
+          <h2>Developer</h2>
+          <p>{{profile.short_intro}}</p>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+  <section id="about-me">
+    <div class="container">
+      <div class="about-me-content">
+        <img src="{% static 'images/developer_male.jpg' %}" alt="Profile Picture">
+        <div class="about-me-text">
+          <h2>About Me</h2>
+          <p>{{profile.bio}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="skills-section">
+    <h2>Skills</h2>
+    {% for skills in skills %}
+    <div class="skill">
+      <h3>{{skills.name}}</h3>
+      <div class="skill-bar">
+        {% if skills.skill_level == 'Beginner' %}
+        <div class="skill-level" style="width: 20%;"></div>
+        {% elif skills.skill_level == 'Intermediate' %}
+        <div class="skill-level" style="width: 50%;"></div>
+        {% elif skills.skill_level == 'Confident' %}
+        <div class="skill-level" style="width: 70%;"></div>
+        {% elif skills.skill_level == 'Professional' %}
+        <div class="skill-level" style="width: 100%;"></div>
+        {% endif  %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-container">
+      {% for project in projects %}
+      <div class="project">
+        <img src="{{project.thumbnail}}" alt="Project 1">
+        <div class="project-info">
+          <h3>{{project.title}}</h3>
+          <p>{{project.content|truncatewords:30}}</p>
+          <div style="text-align: center;">
+            <a href="{{project.github}}">View Project</a> 
+          </div>
+          <!-- <a id="learn" style="background-color: #184e77;">Learn More</a> -->
+        </div>
+      </div>
+
+      <!-- <div id="popup">
+        <h2>This project was made with: </h2>
+        {% for skill in project.skills.all %}
+          <p>{{skill.name}}</p>
+        {% endfor %}
+    </div> -->
+      {% endfor %}
+    </div>
+  </section>
+
+{% endfor %}
+
+<script>
+  document.getElementById('learn').addEventListener('click', function() {
+      document.getElementById('popup').style.display = 'block';
+      setTimeout(function() {
+          document.getElementById('popup').style.display = 'none';
+      }, 5000);
+  });
+</script>
+{% endblock content %}

@@ -1,0 +1,1 @@
+web: gunicorn omertairi.wsgi --log-file -

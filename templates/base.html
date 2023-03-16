@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-FVJfzBAQvF+gRoP8iK7jfYdtA1EzGxNXmX0+vzZi3woq34wvP5O+GW30Ht+NySwYVLNfwvud/UWtX8Q5a/GBQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/contact.css' %}">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+</head>
+<body class="is-preload">
+
+    {% include 'navbar.html' %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    {% include 'contact.html' %}
+
+</body>
+    <script src="{% static 'scripts/index.js' %}"></script>
+    <script src="https://kit.fontawesome.com/4f86afdb6c.js" crossorigin="anonymous"></script>
+</html>
