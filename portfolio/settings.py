@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-%8_%7r8v=r2(+-ig^-g3h+v582p3-b9nrx3$u23wjr8i2)8fa0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1" , "portfolio-production-3855.up.railway.app", "omertairi.org"]
+ALLOWED_HOSTS = ["127.0.0.1" , "portfolio-production-3855.up.railway.app", "omertairi.org", "www.omertairi.org"]
 # web-production-af80.up.railway.app
 CSRF_TRUSTED_ORIGINS = ['https://portfolio-production-3855.up.railway.app/', 'https://www.omertairi.org']
 
