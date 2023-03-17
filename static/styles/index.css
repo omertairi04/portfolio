@@ -96,6 +96,21 @@ body {
     margin-bottom: 30px;
   }
 
+  @media screen and (max-width: 767px) {
+    img {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+    
+    .about-me-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+
   .skills-section {
     margin: 50px 0;
     background-color: #faf9f9;

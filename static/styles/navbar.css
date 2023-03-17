@@ -22,6 +22,10 @@ nav .logo a {
   text-decoration: none;
 }
 
+nav .menu-icon {
+  display: none;
+}
+
 nav .nav-links {
   list-style: none;
   display: flex;
@@ -47,4 +51,38 @@ nav .nav-links a {
 
 nav .nav-links a:hover {
   color: #007bff;
+}
+
+@media only screen and (max-width: 768px) {
+  nav .menu-icon {
+    display: block;
+  }
+  nav .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+  }
+  nav .nav-links li {
+    margin: 10px 0;
+  }
+  nav .nav-links a {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  nav .nav-links a:hover {
+    color: #007bff;
+  }
+  nav.active .nav-links {
+    display: flex;
+  }
 }

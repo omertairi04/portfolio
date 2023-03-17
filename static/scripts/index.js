@@ -8,3 +8,13 @@ skills.forEach(skill => {
   }, 1000);
 });
 
+// NAVBAR 
+const menuIcon = document.querySelector('.menu-icon');
+const navbar = document.querySelector('nav');
+const navLinks = document.querySelector('.nav-links');
+
+menuIcon.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+
+
